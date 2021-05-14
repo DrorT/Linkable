@@ -33,8 +33,7 @@ class Linkable extends StatelessWidget {
     return TextSpan(
         text: '',
         children: _getTextSpans(),
-      ),
-    );
+      );
   }
 
   _getTextSpans() {
