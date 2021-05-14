@@ -17,28 +17,6 @@ class Linkable extends StatelessWidget {
 
   final linkColor;
 
-  final style;
-
-  final textAlign;
-
-  final textDirection;
-
-  final maxLines;
-
-  final overflow;
-
-  final textScaleFactor;
-
-  final softWrap;
-
-  final strutStyle;
-
-  final locale;
-
-  final textWidthBasis;
-
-  final textHeightBehavior;
-
   List<Parser> _parsers = List<Parser>();
   List<Link> _links = List<Link>();
 
@@ -47,36 +25,13 @@ class Linkable extends StatelessWidget {
     @required this.text,
     this.textColor = Colors.black,
     this.linkColor = Colors.blue,
-    this.style,
-    this.textAlign = TextAlign.start,
-    this.textDirection,
-    this.softWrap = true,
-    this.overflow = TextOverflow.clip,
-    this.textScaleFactor = 1.0,
-    this.maxLines,
-    this.locale,
-    this.strutStyle,
-    this.textWidthBasis = TextWidthBasis.parent,
-    this.textHeightBehavior,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     init();
-    return RichText(
-      textAlign: textAlign,
-      textDirection: textDirection,
-      softWrap: softWrap,
-      overflow: overflow,
-      textScaleFactor: textScaleFactor,
-      maxLines: maxLines,
-      locale: locale,
-      strutStyle: strutStyle,
-      textWidthBasis: textWidthBasis,
-      textHeightBehavior: textHeightBehavior,
-      text: TextSpan(
+    return TextSpan(
         text: '',
-        style: style,
         children: _getTextSpans(),
       ),
     );
